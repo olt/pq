@@ -149,7 +149,7 @@ func TestEncodeDecode(t *testing.T) {
 	defer db.Close()
 
 	q := `
-		SELECT 
+		SELECT
 			'\x000102'::bytea,
 			'foobar'::text,
 			NULL::integer,
@@ -157,7 +157,7 @@ func TestEncodeDecode(t *testing.T) {
 			0::boolean,
 			123,
 			3.14::float8
-		WHERE 
+		WHERE
 			    '\x000102'::bytea = $1
 			AND 'foobar'::text = $2
 			AND $3::integer is NULL
